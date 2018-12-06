@@ -1,41 +1,16 @@
 <idea-plugin>
-  <id>com.longforus.kotlincodesorter</id>
-  <name>Kotlin Code Sorter</name>
-  <vendor email="yxq.longforus@gmail.com" url="https://github.com/longforus">longforus</vendor>
+  <id>com.cuongloveit.androidsorter</id>
+  <name>Android Sorter</name>
+  <vendor email="cuongloveit@gmail.com" url="https://github.com/cuongloveit">CuongTruong</vendor>
 
-  <description><![CDATA[
-    <em></em>
-    <h1>Kotlin Code Sorter</h1>
-      <br/>
-      <p>
-      <b>
-      <a href="https://github.com/longforus/KotlinCodeSorter">Website</a> |
-      <a href="https://github.com/longforus">GitHub</a> |
-      <a href="https://github.com/longforus/KotlinCodeSorter/issues">Issues</a> |
-      <a href="https://blog.csdn.net/longforus">Blog</a>
-      </b>
-      </p>
-      <br/>
-      <p><b>A simple plugin for sorting kotlin code.</b></p>
-      <br/>
-      <p><b>Features:</b>
-      <ul>
-        <li>Sort the kotlin code in the order of fields -> initializer -> constructors -> functions.</li>
-        <li>default shortcuts is <b>Ctrl+Alt+K</b>,if no effect, check the shortcut key Settings.</li>
-      </ul>
-      </p>
-      <br/>
-      Inspiration from <a href="https://plugins.jetbrains.com/plugin/7742-lifecycle-sorter">Lifecycle Sorter</a>
-      <br/>
-      <p><a href="https://github.com/longforus/KotlinCodeSorter/issues">Send feedback</a></p>
-    ]]></description>
+  <description>
+    Android Sorter Plugin
+    - Group and Sort code
+    - Support Kotlin
+  </description>
 
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-       on how to target different products -->
-  <!-- uncomment to enable plugin in all products
-  <depends>com.intellij.modules.lang</depends>
-  -->
-  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+
+
   <idea-version since-build="171"/>
   <depends>org.jetbrains.kotlin</depends>
   <extensions defaultExtensionNs="com.intellij">
@@ -43,10 +18,10 @@
   </extensions>
 
   <actions>
-    <group id="com.longforus.kotlincodesorter" text="Sort kotlin code" popup="true" description="Sort the kotlin code in order">
+    <group id="com.cuongloveit.androidsorter" text="Sort kotlin code" popup="true" description="Sort the kotlin code in order">
 
-      <action class="com.longforus.kotlincodesorter.action.SortAction" id="com.longforus.kotlincodesorter.action.SortAction" text="fields->initializer->constructors->functions"
-          description="Sort the kotlin code in this order">
+      <action class="com.cuongloveit.androidsorter.action.SortAction" id="com.cuongloveit.androidsorter.action.SortAction" text="fields->initializer->constructors->functions"
+              description="Sort the kotlin code in this order">
         <keyboard-shortcut first-keystroke="control alt K" keymap="$default"/>
       </action>
       <add-to-group group-id="CodeMenu" anchor="last"/>

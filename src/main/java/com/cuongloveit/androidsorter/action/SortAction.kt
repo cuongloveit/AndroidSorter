@@ -1,11 +1,16 @@
-package com.longforus.kotlincodesorter.action
+package com.cuongloveit.androidsorter.action
 
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.actionSystem.LangDataKeys
 import com.intellij.openapi.command.WriteCommandAction
-import com.longforus.kotlincodesorter.sort.Sorter
+import com.intellij.psi.JavaPsiFacade
+import com.intellij.psi.PsiJavaParserFacade
+import com.cuongloveit.androidsorter.sort.Sorter
 import org.jetbrains.kotlin.psi.KtClassOrObject
+import org.jetbrains.kotlin.psi.psiUtil.startOffset
+import org.jetbrains.kotlin.resolve.jvm.KotlinJavaPsiFacade
 import java.util.*
 
 
@@ -25,11 +30,17 @@ class SortAction : AnAction() {
             startSort(psiClass)
         }
 
+
+    }
+
+    override fun update(e: AnActionEvent?) {
+        super.update(e)
+
     }
 
     private fun startSort(psiClass: List<KtClassOrObject>) {
         for (aClass in psiClass) {
-            object : WriteCommandAction.Simple<Any>( aClass.project, aClass.containingFile) {
+            object : WriteCommandAction.Simple<Any>(aClass.project, aClass.containingFile) {
                 @Throws(Throwable::class)
                 override fun run() {
                     Sorter(aClass).sort()
