@@ -10,5 +10,9 @@
   • Public Functions (sort by alphabet)
   • Private Functions (sort by alphabet)
   
+### Install
+Goto Plugins > Browse repositories, Search `Android Sorter` on Android Studio
+  
+  [Rate here](https://plugins.jetbrains.com/plugin/11410-android-sorter)
   
   Base on: [KotlinCodeSorter](https://github.com/longforus/KotlinCodeSorter) by longforus
